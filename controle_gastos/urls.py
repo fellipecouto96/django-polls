@@ -18,6 +18,6 @@ from django.urls import path
 from contas.views import home
 
 urlpatterns = [
-    path('contas/', home),
+    path('home/', home),
     path('admin/', admin.site.urls),
 ]
