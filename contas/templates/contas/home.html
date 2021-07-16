@@ -6,5 +6,15 @@
 </head>
 <body>
 <h1>Seja bem-vindo!</h1>
+<p>Agora são: {{ now }}</p>
+<p>
+<ul>{% for transacao in transacoes  %}
+    {% if transacao == 't1' %}
+    <li><strong>{{ transacao }}</strong></li>
+    {% else %}
+    <li>{{ transacao }}</li>
+    {% endif %}
+    {% endfor %}</ul>
+</p>
 </body>
 </html>
