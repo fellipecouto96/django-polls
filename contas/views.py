@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Transacao
 from django.http import HttpResponse
+from .form import TransacaoForm
 import datetime
 
 def home(request):
@@ -14,3 +15,13 @@ def listagem(request):
     data = {}
     data['transacoes'] = Transacao.objects.all()
     return render(request, 'contas/listagem.html', data)
+
+def nova_transacao(request):
+    data = {}
+    data['form'] = TransacaoForm(request.POST or None)
+
+    if data['form'].is_valid():
+        data['form'].save()
+        return redirect('url_listagem')
+
+    return render(request, 'contas/form.html', data)
