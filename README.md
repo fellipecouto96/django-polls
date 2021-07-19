@@ -1,4 +1,4 @@
-# django-polls
+# django-training
 Learning Django and Python 🐍
 
 # Curso de Django
